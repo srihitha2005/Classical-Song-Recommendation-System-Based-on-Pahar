@@ -1,0 +1,29 @@
+# Classical Music Recommender System
+## Problem Statement
+The problem statement is: Classical Music recommender system on the basis of time (Pahar) of the day. Classification of song on the basis of its raga.
+
+### Problem Division
+The problem is first divided into two parts:
+#### 1. Song Recommendation
+To recommend song we first process the audio, since processing the entire audio is computationally expensive we only process the main parts of audio using librosa's mfcc function. The audio is returned as numpy array. We then normalize our data so we can train it on HMM. The mfcc features are used to train the model, which learns the statistical patterns of the song's audio. Then the similarity between songs is calculated using loglikelihood of HMM model. Similarity matrix between two songs is constructed, we find the most relevant songs using similarity scores.
+
+#### 2. Recommendation of Pahar
+We introduce pahar into similarity matrix so that we can consider them both. The pahar is found out by using simple if conditions. the hours in time is passed to the if conditions and it returns the respective pahar
+
+### Choosing the Dataset
+The data is taken from “neerajaabhyankar/hindustani-raag-small” from huggingface. The dataset is chosen since it has labels for ragas and the classical audios are less than 10 sec. I only used 50 percent of the dataset since using less data would be easier to compute and store
+
+### Challenges Expected
+#### Scalability
+Handling a large dataset and providing real-time recommendations will require efficient algorithms and infrastructure. Using a dataloader would solve this problem.
+
+#### Diversity vs. Personalization
+Balancing between recommending familiar songs and introducing new ones to the user can be challenging, requiring careful tuning of the recommendation algorithm.
+
+### Compromises Faced
+•  **Fixed Number of Recommendations**: This can be improved by introducing a variable to control the number of recommendations dynamically.
+•  **Handling Large Datasets**: Implementing a dataloader for large datasets can improve efficiency, though it requires additional storage and computation resources.
+•  **Incorporating User Feedback**: Currently, the system doesn't account for explicit user feedback on recommendations. Introducing a like/dislike mechanism can improve recommendation accuracy.
+•  **Cold Start Problem**: For new users, initial recommendations can be based on popular songs or inferred preferences from demographic data.
+•  **Interest-Based Recommendations**: Enhancing the model to consider specific user interests, such as favorite genres or artists, can further improve personalization.
+•  **User Similarity**: Leveraging data from multiple users to construct a similarity matrix can enable recommending songs enjoyed by similar users.

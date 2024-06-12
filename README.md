@@ -6,7 +6,7 @@ A Classical Song Recommendation System that Also considers Pahars
 The data is taken from “neerajaabhyankar/hindustani-raag-small” from huggingface.
 
 ## Files
-* A notebook file named positive news recommndation system.ipynb containing the code and output
+* A notebook file named song_recommendation_system.ipynb containing the code and output
 * A file named documentation contating thiking_process, Choice of Dataset,Challenges and their possible solutions, Initial compromises that might get better in future versions
 
 ### Features

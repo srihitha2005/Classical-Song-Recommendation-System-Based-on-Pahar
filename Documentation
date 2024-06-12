@@ -20,6 +20,9 @@ Handling a large dataset and providing real-time recommendations will require ef
 #### Diversity vs. Personalization
 Balancing between recommending familiar songs and introducing new ones to the user can be challenging, requiring careful tuning of the recommendation algorithm.
 
+#### Limited amount of Pahars 
+Due to limited amount of data only some pahars are considered. This can be solved by training the model with extra data.
+
 ### Compromises Faced
 •  **Fixed Number of Recommendations**: This can be improved by introducing a variable to control the number of recommendations dynamically.
 •  **Handling Large Datasets**: Implementing a dataloader for large datasets can improve efficiency, though it requires additional storage and computation resources.
